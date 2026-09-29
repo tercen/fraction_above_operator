@@ -1,0 +1,15 @@
+{
+  "kind": "TableSchema",
+  "columns": [
+    {
+      "kind": "ColumnSchema",
+      "name": "marker",
+      "type": "string"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "threshold",
+      "type": "double"
+    }
+  ]
+}

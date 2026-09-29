@@ -1,0 +1,10 @@
+{
+  "kind": "TableSchema",
+  "columns": [
+    {
+      "kind": "ColumnSchema",
+      "name": "group",
+      "type": "string"
+    }
+  ]
+}

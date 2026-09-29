@@ -1,0 +1,32 @@
+{
+  "kind": "OperatorUnitTest",
+  "name": "fraction_above_three_groups",
+  "namespace": "ds0",
+  "inputDataUri": "fraction_test_long.csv",
+  "outputDataUri": [
+    "table1.csv",
+    "table2.csv",
+    "table3.csv"
+  ],
+  "columns": [
+    "group"
+  ],
+  "rows": [
+    "marker",
+    "threshold"
+  ],
+  "colors": [],
+  "labels": [],
+  "yAxis": "value",
+  "xAxis": "",
+  "generatedOn": "09/29/2026 02:21:00 PM 2026",
+  "version": "",
+  "absTol": 1e-09,
+  "propertyValues": [
+    {
+      "kind": "PropertyValue",
+      "name": "min_values",
+      "value": "5"
+    }
+  ]
+}

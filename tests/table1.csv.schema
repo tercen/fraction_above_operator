@@ -1,0 +1,35 @@
+{
+  "kind": "TableSchema",
+  "columns": [
+    {
+      "kind": "ColumnSchema",
+      "name": "ds0.fraction",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds0.pct",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds0.n_above",
+      "type": "int32"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds0.n",
+      "type": "int32"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": ".ri",
+      "type": "int32"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": ".ci",
+      "type": "int32"
+    }
+  ]
+}

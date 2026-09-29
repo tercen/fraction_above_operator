@@ -1,0 +1,127 @@
+{
+  "name": "Fraction above threshold (Rust)",
+  "description": "Per crosstab cell, the fraction (and percent) of values above the row's threshold, the threshold being the second row factor. One streaming pass; the memory is the number of cells, not values. Used for percent-positive per patient and cluster given per-marker thresholds.",
+  "tags": [
+    "cytometry",
+    "percent positive",
+    "threshold"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/fraction_above_rust_operator"
+  ],
+  "communicationProtocol": "grpc",
+  "container": "ghcr.io/tercen/fraction_above_rust_operator:0.1.0",
+  "operatorSpec": {
+    "kind": "OperatorSpec",
+    "ontologyUri": "https://tercen.com/_ontology/tercen",
+    "ontologyVersion": "0.0.1",
+    "inputSpecs": [
+      {
+        "kind": "CrosstabSpec",
+        "metaFactors": [
+          {
+            "kind": "MetaFactor",
+            "name": "Variable",
+            "type": "",
+            "description": "Marker on rows, followed by its threshold as a second row factor.",
+            "ontologyMapping": "variable",
+            "crosstabMapping": "row",
+            "cardinality": "0..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Observation",
+            "type": "",
+            "description": "Group per column (patient x cluster, sample, ...).",
+            "ontologyMapping": "observation",
+            "crosstabMapping": "column",
+            "cardinality": "0..n",
+            "factors": []
+          }
+        ],
+        "axis": [
+          {
+            "kind": "AxisSpec",
+            "metaFactors": [
+              {
+                "kind": "MetaFactor",
+                "name": "Measurement",
+                "type": "double",
+                "description": "Values compared to the row's threshold.",
+                "ontologyMapping": "measurement",
+                "crosstabMapping": "y",
+                "cardinality": "1",
+                "factors": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputSpecsV2": [
+      {
+        "kind": "OperatorJoinSpec",
+        "joinOperators": [
+          {
+            "kind": "JoinOperator",
+            "joinType": "left",
+            "leftPair": {
+              "kind": "ColumnPair",
+              "lColumns": [
+                "Variable",
+                "Observation"
+              ],
+              "rColumns": [
+                "Variable",
+                "Observation"
+              ]
+            },
+            "rightRelation": {
+              "kind": "TableRelation",
+              "attributes": [
+                {
+                  "kind": "Attribute",
+                  "name": "fraction",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "pct",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "n_above",
+                  "type": "int32"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "n",
+                  "type": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "properties": [
+    {
+      "kind": "DoubleProperty",
+      "name": "min_values",
+      "defaultValue": 1,
+      "description": "Cells with fewer values than this get no fraction (NaN); their counts are still written."
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "inclusive",
+      "defaultValue": false,
+      "description": "Count values equal to the threshold as above it."
+    }
+  ]
+}
