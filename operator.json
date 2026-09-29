@@ -13,7 +13,7 @@
     "https://github.com/tercen/fraction_above_rust_operator"
   ],
   "communicationProtocol": "grpc",
-  "container": "ghcr.io/tercen/fraction_above_rust_operator:0.1.0",
+  "container": "ghcr.io/tercen/fraction_above_rust_operator:0.1.1",
   "operatorSpec": {
     "kind": "OperatorSpec",
     "ontologyUri": "https://tercen.com/_ontology/tercen",

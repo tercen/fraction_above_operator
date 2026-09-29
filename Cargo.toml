@@ -1,6 +1,6 @@
 [package]
 name = "fraction_above_operator"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Fraction of values above a per-row threshold, per crosstab cell (Tercen operator, Rust)"
 license = "MIT"
