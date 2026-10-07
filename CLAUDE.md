@@ -1,4 +1,4 @@
-# fraction_above_rust_operator
+# fraction_above_operator
 
 Rust Tercen operator; skeleton copied from `flowsom_rust_operator` (context, input streaming,
 TSON writer, upload, progress, pagecache). Operator logic: 

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.7
-# fraction_above_rust_operator — static tier (create-rust-operator §5): one musl binary on scratch.
+# fraction_above_operator — static tier (create-rust-operator §5): one musl binary on scratch.
 
 # ---- builder ----
 FROM rust:1.94-bookworm AS builder

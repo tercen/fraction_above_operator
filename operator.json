@@ -1,5 +1,5 @@
 {
-  "name": "Fraction above threshold (Rust)",
+  "name": "Fraction above threshold",
   "description": "Per crosstab cell, the fraction (and percent) of values above the row's threshold, the threshold being the second row factor. One streaming pass; the memory is the number of cells, not values. Used for percent-positive per patient and cluster given per-marker thresholds.",
   "tags": [
     "cytometry",
@@ -10,10 +10,10 @@
     "tercen"
   ],
   "urls": [
-    "https://github.com/tercen/fraction_above_rust_operator"
+    "https://github.com/tercen/fraction_above_operator"
   ],
   "communicationProtocol": "grpc",
-  "container": "ghcr.io/tercen/fraction_above_rust_operator:0.1.1",
+  "container": "ghcr.io/tercen/fraction_above_operator:0.1.2",
   "operatorSpec": {
     "kind": "OperatorSpec",
     "ontologyUri": "https://tercen.com/_ontology/tercen",

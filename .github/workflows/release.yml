@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: tercen/fraction_above_rust_operator
+  IMAGE_NAME: tercen/fraction_above_operator
 
 jobs:
   build-and-push-image:
